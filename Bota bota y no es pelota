@@ -1,0 +1,31 @@
+var x = 200;
+var velx = 5;
+
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background(220);
+  mostrar();
+  moverx();
+  botarx();
+}
+
+function mostrar() {
+  ellipse(x, 200, 50, 50);
+}
+
+function moverx() {
+  x = x + velx;
+  console.log(x);
+}
+
+function botarx() {
+  if (x > 375) {
+    velx = velx * -1;
+  }
+  if (x < 25) {
+    velx = velx * -1;
+  }
+}
