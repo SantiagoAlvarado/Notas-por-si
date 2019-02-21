@@ -1,0 +1,15 @@
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background(220);
+  var tempMtyF = 50;
+  tempMtyC = FToCelsius(tempMtyF);
+  console. log(tempMtyC)
+}
+function FToCelsius(tempF){
+  var tempC;
+  tempC =  (tempF - 32)*(5/ 9);
+  return tempC;
+}
