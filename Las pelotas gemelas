@@ -1,0 +1,49 @@
+var p1;
+var p2;
+
+function setup() {
+  createCanvas(400, 400);
+  p1 = new Ball();
+  p2 = new Ball();
+}
+
+function draw() {
+  background(220);
+   p1.mostrar();
+  p1.mover();
+  if (p1.salir()) {
+    p1.botar();
+  }
+   p2.mostrar();
+  p2.mover();
+  if (p2.salir()) {
+    p2.botar();
+  }
+}
+
+class Ball {
+  constructor() {
+    this.x = random(0,400);
+    this.y = random(0,400);
+    this.tam = 50;
+    this.velx = 10;
+  }
+  mostrar() {
+    ellipse(this.x, this.y, this.tam, this.tam);
+  }
+  mover() {
+    this.x = this.x + this.velx;
+  }
+  salir() {
+    var res;
+    if (this.x < 25 || this.x > 375) {
+      res = true;
+    } else {
+      res = false
+    }
+    return res;
+  }
+  botar() {
+    this.velx = this.velx * -1
+  }
+}
